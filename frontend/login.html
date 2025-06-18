@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login to Skill-Swap</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h2 class="text-3xl font-bold text-center text-pink-600 mb-6">Login to Skill-Swap</h2>
+
+    <form id="loginForm" class="space-y-5">
+      <div>
+        <label class="block mb-1 text-gray-700" for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required
+               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400" />
+      </div>
+      <div>
+        <label class="block mb-1 text-gray-700" for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required
+               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400" />
+      </div>
+      <div class="flex items-center justify-between">
+        <label class="flex items-center text-sm">
+          <input type="checkbox" class="mr-2 rounded border-gray-300" />
+          Remember me
+        </label>
+        <a href="register.html" class="text-sm text-pink-600 hover:underline">Register</a>
+      </div>
+      <button type="submit"
+              class="w-full bg-pink-600 text-white py-2 px-4 rounded-md hover:bg-pink-700 transition">
+        Log In
+      </button>
+    </form>
+
+    <p id="error" class="mt-4 text-center text-sm text-red-600 hidden">Invalid email or password</p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent form from submitting normally
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (email === 'siambinayub@gmail.com' && password === '1234') {
+        window.location.href = 'newsfeed.html';
+      } else {
+        document.getElementById('error').classList.remove('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
